@@ -19,7 +19,7 @@ export default function Homepage() {
   return (
     <Layout>
       <Heading>Home page</Heading>
-      <Text my={6}>The Current user is : {currentUser}</Text>
+
 
       <Heading>
         Firebase Authentication
