@@ -24,6 +24,7 @@ export function Navbar() {
       borderBottom='2px'
       borderBottomColor={useColorModeValue('gray.100', 'gray.700')}
       mb={4}
+      mx={{ base: 4, md: 8 }} // Adjust margin based on screen size
     >
       <HStack
         py={4}
