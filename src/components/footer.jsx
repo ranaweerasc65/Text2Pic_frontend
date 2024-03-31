@@ -18,7 +18,7 @@ import {
   
   const Footer = () => {
     return (
-      <Box p={{ base: 5, md: 8 }} maxW="container.lg" marginInline="auto"> {/* Set max width to 'container.lg' */}
+      <Box p={{ base: 5, md: 8 }} maxW="container.lg" marginInline="auto"> 
         <Stack
           spacing={{ base: 8, md: 0 }}
           justifyContent="space-between"

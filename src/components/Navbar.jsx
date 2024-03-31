@@ -3,12 +3,17 @@ import {
   HStack,
   IconButton,
   Spacer,
+  Image,
   useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react'
 import React from 'react'
 import { FaMoon, FaSun } from 'react-icons/fa'
 import Navlink from './Navlink'
+import logo from '../images/logo_navbar.png';
+
+import { Link as RouterLink } from 'react-router-dom';
+
 
 export function Navbar() {
   const { toggleColorMode } = useColorMode()
@@ -20,12 +25,17 @@ export function Navbar() {
       mb={4}
     >
       <HStack py={4} justifyContent='flex-end' maxW='container.lg' mx='auto'>
-        <Navlink to='/' name='Firbase Authentication' size='lg' />
+
+        <RouterLink to='/'>
+          <Image w="100px" src={logo} alt="Company Logo" />
+        </RouterLink>
+        
         <Spacer />
+
         <Navlink to='/login' name='Login' />
         <Navlink to='/register' name='Register' />
         <Navlink to='/profile' name='Profile' />
-        <Navlink to='/protected-page' name='Protected' />
+        <Navlink to='/dashboard' name='Dashboard' />
         <Navlink
           to='/logout'
           name='Logout'
