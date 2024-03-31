@@ -6,17 +6,18 @@ import {
   Image,
   useColorMode,
   useColorModeValue,
-} from '@chakra-ui/react'
-import React from 'react'
-import { FaMoon, FaSun } from 'react-icons/fa'
-import Navlink from './Navlink'
+} from '@chakra-ui/react';
+import React from 'react';
+import { FaMoon, FaSun } from 'react-icons/fa';
+import Navlink from './Navlink';
 import logo from '../images/logo_navbar.png';
-
 import { Link as RouterLink } from 'react-router-dom';
-
+import { useAuth } from '../contexts/AuthContext';
 
 export function Navbar() {
-  const { toggleColorMode } = useColorMode()
+  const { toggleColorMode } = useColorMode();
+
+  const {logout} = useAuth()
 
   return (
     <Box
@@ -24,34 +25,43 @@ export function Navbar() {
       borderBottomColor={useColorModeValue('gray.100', 'gray.700')}
       mb={4}
     >
-      <HStack py={4} justifyContent='flex-end' maxW='container.lg' mx='auto'>
-
+      <HStack
+        py={4}
+        justifyContent='space-between' // Align items to the start on small screens and between on larger screens
+        alignItems='center' // Center items vertically
+        maxW='container.lg'
+        mx='auto'
+        px={{ base: 4, md: 0 }} // Adjust padding based on screen size
+      >
+        {/* Logo with RouterLink */}
         <RouterLink to='/'>
           <Image w="100px" src={logo} alt="Company Logo" />
         </RouterLink>
         
-        <Spacer />
-
-        <Navlink to='/login' name='Login' />
-        <Navlink to='/register' name='Register' />
-        <Navlink to='/profile' name='Profile' />
-        <Navlink to='/dashboard' name='Dashboard' />
-        <Navlink
-          to='/logout'
-          name='Logout'
-          onClick={async e => {
-            e.preventDefault()
-            // handle logout
-            alert('logout user')
-          }}
-        />
-        <IconButton
-          variant='outline'
-          icon={useColorModeValue(<FaSun />, <FaMoon />)}
-          onClick={toggleColorMode}
-          aria-label='toggle-dark-mode'
-        />
+        {/* Navlinks and other components */}
+        <HStack spacing={4}>
+          <Navlink to='/login' name='Login' />
+          <Navlink to='/register' name='Register' />
+          <Navlink to='/profile' name='Profile' />
+          <Navlink to='/dashboard' name='Dashboard' />
+          <Navlink
+            to='/logout'
+            name='Logout'
+            onClick={async e => {
+              e.preventDefault();
+              // handle logout
+              logout()
+              alert('You are logging out now!!!');
+            }}
+          />
+          <IconButton
+            variant='outline'
+            icon={useColorModeValue(<FaSun />, <FaMoon />)}
+            onClick={toggleColorMode}
+            aria-label='toggle-dark-mode'
+          />
+        </HStack>
       </HStack>
     </Box>
-  )
+  );
 }
