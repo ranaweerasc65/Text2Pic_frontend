@@ -17,7 +17,7 @@ import { useAuth } from '../contexts/AuthContext';
 export function Navbar() {
   const { toggleColorMode } = useColorMode();
 
-  const {logout} = useAuth()
+  const {currentUser, logout} = useAuth()
 
   return (
     <Box
@@ -40,11 +40,12 @@ export function Navbar() {
         
         {/* Navlinks and other components */}
         <HStack spacing={4}>
-          <Navlink to='/login' name='Login' />
-          <Navlink to='/register' name='Register' />
-          <Navlink to='/profile' name='Profile' />
-          <Navlink to='/dashboard' name='Dashboard' />
-          <Navlink
+          {!currentUser && <Navlink to='/login' name='Login' />}
+          {!currentUser && <Navlink to='/register' name='Register' />}
+          {currentUser && <Navlink to='/profile' name='Profile' />}
+          {currentUser && <Navlink to='/dashboard' name='Dashboard' />}
+
+          {currentUser && <Navlink
             to='/logout'
             name='Logout'
             onClick={async e => {
@@ -53,7 +54,7 @@ export function Navbar() {
               logout()
               alert('You are logging out now!!!');
             }}
-          />
+          />}
           <IconButton
             variant='outline'
             icon={useColorModeValue(<FaSun />, <FaMoon />)}
