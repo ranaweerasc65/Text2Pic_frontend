@@ -50,7 +50,7 @@ export default function Registerpage() {
             // your register logic here
             setIsSubmitting(true)
             register(email, password)
-              .then(res => {})
+              .then(res => {navigate('/login')})
               .catch(error => {
                 console.log(error.message)
                 toast({
@@ -100,7 +100,7 @@ export default function Registerpage() {
           </Stack>
         </chakra.form>
         <Center my={4}>
-          <Button variant='link' onClick={() => navigate.push('/login')}>
+          <Button variant='link' onClick={() => navigate('/login')}>
             Login
           </Button>
         </Center>

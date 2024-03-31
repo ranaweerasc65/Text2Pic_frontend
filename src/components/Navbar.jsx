@@ -41,7 +41,7 @@ export function Navbar() {
         {/* Navlinks and other components */}
         <HStack spacing={4}>
           {!currentUser && <Navlink to='/login' name='Login' />}
-          {!currentUser && <Navlink to='/register' name='Register' />}
+          {/*{!currentUser && <Navlink to='/register' name='Register' />}*/}
           {currentUser && <Navlink to='/profile' name='Profile' />}
           {currentUser && <Navlink to='/dashboard' name='Dashboard' />}
 

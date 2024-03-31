@@ -68,22 +68,20 @@ export default function Loginpage() {
               return
             }
             setIsSubmitting(true)
-            login(email, password)
-              .then(res => {
-                handleRedirectToOrBack()
+            try {
+              await login(email, password)
+              navigate('/dashboard')
+            } catch (error) {
+              console.log(error.message)
+              toast({
+                //description: error.message,
+                status: 'error',
+                duration: 9000,
+                isClosable: true,
               })
-              .catch(error => {
-                console.log(error.message)
-                toast({
-                  //description: error.message,
-                  status: 'error',
-                  duration: 9000,
-                  isClosable: true,
-                })
-              })
-              .finally(() => {
-                mounted.current && setIsSubmitting(false)
-              })
+            } finally {
+              setIsSubmitting(false)
+            }
           }}
         >
           <Stack spacing='6'>
@@ -125,7 +123,7 @@ export default function Loginpage() {
           <Button variant='link'>
             <Link to='/forgot-password'>Forgot password?</Link>
           </Button>
-          <Button variant='link' onClick={() => history.push('/register')}>
+          <Button variant='link' onClick={() => navigate('/register')}>
             Register
           </Button>
         </HStack>
@@ -139,6 +137,7 @@ export default function Loginpage() {
             signInWithGoogle()
               .then(user => {
                 handleRedirectToOrBack()
+                navigate('/dashboard')
                 console.log(user)
               })
               .catch(e => console.log(e.message))
