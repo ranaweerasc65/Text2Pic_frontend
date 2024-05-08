@@ -15,8 +15,20 @@ import {
   import { FaFacebook, FaWhatsapp } from 'react-icons/fa';
   import { MdEmail, MdPhone } from 'react-icons/md';
   import logo from '../images/logo_navbar.png';
-  
+  import {Link as ChakraLink } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
+
+
+
   const Footer = () => {
+
+    const navigate = useNavigate();
+
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
+
+
     return (
       <Box p={{ base: 5, md: 8 }} maxW="container.lg" marginInline="auto"> 
         <Stack
@@ -36,24 +48,27 @@ import {
               About
             </Text>
             <VStack spacing={2} alignItems="flex-start" color="gray.500">
-              <CustomLink>Our Story</CustomLink>
-              <CustomLink>Terms and Conditions</CustomLink>
-              <CustomLink>Privacy Policy</CustomLink>
-              <CustomLink>Meet the Team</CustomLink>
+              <ChakraLink onClick={() => handleNavigation('/our-story')}>Our Story</ChakraLink>
+              <ChakraLink onClick={() => handleNavigation('/terms-and-conditions')}>Terms and Conditions</ChakraLink>
+              <ChakraLink onClick={() => handleNavigation('/privacy-policy')}>Privacy Policy</ChakraLink>
+              <ChakraLink onClick={() => handleNavigation('/meet-the-team')}>Meet the Team</ChakraLink>
             </VStack>
           </VStack>
+
           {/* Quick Links section */}
           <VStack spacing={4} alignItems="flex-start">
             <Text fontSize="md" fontWeight="bold">
               Quick Links
             </Text>
             <VStack spacing={2} alignItems="flex-start" color="gray.500">
-              <CustomLink>Login</CustomLink>
-              <CustomLink>Register</CustomLink>
-              <CustomLink>Profile</CustomLink>
-              <CustomLink>Dashboard</CustomLink>
+              <ChakraLink onClick={() => handleNavigation('/login')}>Login</ChakraLink>
+              <ChakraLink onClick={() => handleNavigation('/register')}>Register</ChakraLink>
+              <ChakraLink onClick={() => handleNavigation('/profile')}>Profile</ChakraLink>
+              <ChakraLink onClick={() => handleNavigation('/dashboard')}>Dashboard</ChakraLink>
             </VStack>
           </VStack>
+
+
           {/* "Follow Us" section */}
           <VStack spacing={4} alignItems="flex-start">
             <Text fontSize="md" fontWeight="bold">

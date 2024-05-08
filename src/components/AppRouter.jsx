@@ -10,7 +10,10 @@ import Registerpage from '../pages/Registerpage';
 import ResetPasswordPage from '../pages/ResetPasswordPage';
 import { useAuth } from '../contexts/AuthContext';
 import PrivateRoute from './PrivateRoute';
-
+import MeetTheTeamPage from '../pages/MeetTheTeam';
+import OurStoryPage from '../pages/OurStory';
+import PrivacyPolicyPage from '../pages/PrivacyPolicy';
+import TermsConditionPage from '../pages/TermsCondition';
 
 
 export default function AppRouter(props) {
@@ -29,6 +32,13 @@ export default function AppRouter(props) {
           <Route path='/forgot-password' element={<ForgotPasswordPage />} />
           <Route path='/reset-password' element={<ResetPasswordPage />} />
           <Route path='*' element={<NotfoundPage />} />
+
+
+          <Route path='/meet-the-team' element={<MeetTheTeamPage />} />
+          <Route path='/our-story' element={<OurStoryPage />} />
+          <Route path='/privacy-policy' element={<PrivacyPolicyPage />} />
+          <Route path='/terms-and-conditions' element={<TermsConditionPage />} />
+
         </Routes>
       </Router>
     </>

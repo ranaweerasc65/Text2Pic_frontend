@@ -6,9 +6,9 @@ export default function ProtectedPage() {
   return (
     <Layout>
       <Heading>
-        Protected page
+        Dashboard 
         <Badge colorScheme='green' fontSize='lg' mx={4}>
-          Protected Page
+          Dashboard
         </Badge>
       </Heading>
       <Container maxW='container.lg' overflowX='auto' py={4}></Container>
