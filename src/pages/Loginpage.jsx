@@ -9,7 +9,7 @@ import {
   Stack,
   useToast,
 } from '@chakra-ui/react'
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState,useEffect } from 'react'
 import { FcGoogle } from 'react-icons/fc'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { Card } from '../components/Card'
@@ -26,9 +26,9 @@ export default function Loginpage() {
   const [password, setPassword] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const toast = useToast()
-  //const mounted = useRef(false)
   const location = useLocation()
 
+  //console.log(location.state?.from);
 
   // useEffect(() => {
   //   mounted.current = true
@@ -37,7 +37,8 @@ export default function Loginpage() {
   //   }
   // }, [])
 
-  const mounted = useMounted()
+const mounted=useMounted()
+
 
   function handleRedirectToOrBack() {
     // console.log(location?.state)
@@ -62,26 +63,44 @@ export default function Loginpage() {
               toast({
                 description: 'Credentials not valid.',
                 status: 'error',
-                duration: 9000,
+                duration: 5000,
                 isClosable: true,
               })
-              return
+              //return
             }
+
             setIsSubmitting(true)
+
+            
             try {
               await login(email, password)
-              navigate('/dashboard')
+              
+              navigate(location.state?.from ?? '/dashboard')
             } catch (error) {
               console.log(error.message)
               toast({
-                //description: error.message,
+                description: error.message,
                 status: 'error',
                 duration: 9000,
                 isClosable: true,
               })
             } finally {
-              setIsSubmitting(false)
+              mounted.current && setIsSubmitting(false)
             }
+          
+{/*
+          login(email,password)
+            .then(response => console.log(response))
+            .catch(error=>{
+              console.log(error.message)
+              toast({
+                description:error.message,
+                status: 'error',
+                duration: 9000,
+                isClosable: true,
+              })
+            })
+          */}
           }}
         >
           <Stack spacing='6'>
@@ -128,6 +147,7 @@ export default function Loginpage() {
           </Button>
         </HStack>
         <DividerWithText my={6}>OR</DividerWithText>
+
         <Button
           variant='outline'
           isFullWidth
@@ -138,7 +158,7 @@ export default function Loginpage() {
               .then(user => {
                 handleRedirectToOrBack()
                 navigate('/dashboard')
-                console.log(user)
+                //console.log(user)
               })
               .catch(e => console.log(e.message))
           }

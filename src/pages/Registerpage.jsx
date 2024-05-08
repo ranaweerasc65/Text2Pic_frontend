@@ -10,7 +10,7 @@ import {
   useToast,
 } from '@chakra-ui/react'
 import React, { useEffect, useRef, useState } from 'react'
-import { FaGoogle } from 'react-icons/fa'
+import { FcGoogle } from 'react-icons/fc'
 import { useNavigate } from 'react-router-dom'
 import { Card } from '../components/Card'
 import DividerWithText from '../components/DividerWithText'
@@ -24,10 +24,11 @@ export default function Registerpage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const toast = useToast()
+  const toast = useToast()  //react hook
 
   const mounted = useMounted()
   
+
 
   return (
     <Layout>
@@ -38,16 +39,19 @@ export default function Registerpage() {
         <chakra.form
           onSubmit={async e => {
             e.preventDefault()
+
+            // your register logic here
+
             if (!email || !password) {
               toast({
                 description: 'Credentials not valid.',
                 status: 'error',
-                duration: 9000,
+                duration: 5000,
                 isClosable: true,
               })
-              return
+              //return
             }
-            // your register logic here
+            
             setIsSubmitting(true)
             register(email, password)
               .then(res => {navigate('/login')})
@@ -64,6 +68,8 @@ export default function Registerpage() {
                 mounted.current && setIsSubmitting(false)
               })
           }}
+
+          
         >
           <Stack spacing='6'>
             <FormControl id='email'>
@@ -109,10 +115,10 @@ export default function Registerpage() {
           variant='outline'
           isFullWidth
           colorScheme='red'
-          leftIcon={<FaGoogle />}
+          leftIcon={<FcGoogle />}
           onClick={() =>
             signInWithGoogle()
-              .then(user => console.log(user))
+              .then(user=>navigate('/profile'))
               .catch(e => console.log(e.message))
           }
         >

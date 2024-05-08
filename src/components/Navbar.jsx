@@ -24,15 +24,15 @@ export function Navbar() {
       borderBottom='2px'
       borderBottomColor={useColorModeValue('gray.100', 'gray.700')}
       mb={4}
-      mx={{ base: 4, md: 8 }} // Adjust margin based on screen size
+      mx={{ base: 4, md: 8 }} 
     >
       <HStack
         py={4}
-        justifyContent='space-between' // Align items to the start on small screens and between on larger screens
-        alignItems='center' // Center items vertically
+        justifyContent='space-between' 
+        alignItems='center' 
         maxW='container.lg'
         mx='auto'
-        px={{ base: 4, md: 0 }} // Adjust padding based on screen size
+        px={{ base: 4, md: 0 }} 
       >
         {/* Logo with RouterLink */}
         <RouterLink to='/'>
