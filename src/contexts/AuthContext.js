@@ -66,6 +66,8 @@ export default function AuthContextProvider({ children }) {
     return signInWithPopup(auth, provider)
   }
 
+
+
   const value = {
     currentUser,
     signInWithGoogle,
