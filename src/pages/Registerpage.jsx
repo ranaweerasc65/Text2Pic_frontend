@@ -40,8 +40,6 @@ export default function Registerpage() {
           onSubmit={async e => {
             e.preventDefault()
 
-            // your register logic here
-
             if (!email || !password) {
               toast({
                 description: 'Credentials not valid.',
@@ -113,7 +111,6 @@ export default function Registerpage() {
         <DividerWithText my={6}>OR</DividerWithText>
         <Button
           variant='outline'
-          isFullWidth
           colorScheme='red'
           leftIcon={<FcGoogle />}
           onClick={() =>

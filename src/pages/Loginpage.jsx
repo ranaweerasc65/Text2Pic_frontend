@@ -150,7 +150,7 @@ const mounted=useMounted()
 
         <Button
           variant='outline'
-          isFullWidth
+          //isFullWidth
           colorScheme='red'
           leftIcon={<FcGoogle />}
           onClick={() =>
