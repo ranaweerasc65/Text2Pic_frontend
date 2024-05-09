@@ -14,11 +14,11 @@ import {
   import { Link } from 'react-router-dom'
   import { useAuth } from '../contexts/AuthContext'
   
-  const Testimonial = ({ children }: { children: ReactNode }) => {
+  const Testimonial = ({ children }) => {
     return <Box>{children}</Box>;
   };
   
-  const TestimonialContent = ({ children }: { children: ReactNode }) => {
+  const TestimonialContent = ({ children }) => {
     return (
       <Stack
         bg={useColorModeValue('white', 'gray.800')}
@@ -48,7 +48,7 @@ import {
     );
   };
   
-  const TestimonialHeading = ({ children }: { children: ReactNode }) => {
+  const TestimonialHeading = ({ children }) => {
     return (
       <Heading as={'h3'} fontSize={'xl'}>
         {children}
@@ -56,7 +56,7 @@ import {
     );
   };
   
-  const TestimonialText = ({ children }: { children: ReactNode }) => {
+  const TestimonialText = ({ children }) => {
     return (
       <Text
         textAlign={'center'}
@@ -67,15 +67,7 @@ import {
     );
   };
   
-  const TestimonialAvatar = ({
-    src,
-    name,
-    title,
-  }: {
-    src: string;
-    name: string;
-    title: string;
-  }) => {
+  const TestimonialAvatar = ({ src, name, title }) => {
     return (
       <Flex align={'center'} mt={8} direction={'column'}>
         <Avatar src={src} alt={name} mb={2} />
@@ -88,6 +80,7 @@ import {
       </Flex>
     );
   };
+  
 
   export default function MeetTheTeamPage() {
     const {currentUser}= useAuth()
@@ -105,6 +98,8 @@ import {
         <Stack
           direction={{ base: 'column', md: 'row' }}
           spacing={{ base: 10, md: 4, lg: 10 }}>
+
+            {/* Supun */}
           <Testimonial>
             <TestimonialContent>
               <TestimonialHeading>Job</TestimonialHeading>
@@ -120,11 +115,13 @@ import {
               name={'Supun Thilakshana'}
               title={
                 <div style={{ textAlign: 'center' }}>
-                  Engineering Undergraduate <br /> Faculty of Engineering <br/> University of Ruhuna
+                  Undergraduate <br /> Faculty of Engineering <br/> University of Ruhuna
                 </div>
               }
             />
           </Testimonial>
+
+           {/* Pavith */}
           <Testimonial>
             <TestimonialContent>
               <TestimonialHeading>Job</TestimonialHeading>
@@ -140,11 +137,13 @@ import {
               name={'Tharuka Pavith'}
               title={
                 <div style={{ textAlign: 'center' }}>
-                  Engineering Undergraduate <br /> Faculty of Engineering <br/> University of Ruhuna
+                  Undergraduate <br /> Faculty of Engineering <br/> University of Ruhuna
                 </div>
               }
             />
           </Testimonial>
+
+           {/* Sachini */}
           <Testimonial>
             <TestimonialContent>
               <TestimonialHeading>Frontend Engineer</TestimonialHeading>
@@ -160,7 +159,7 @@ import {
               name={'Sachini Ranaweera'}
               title={
                 <div style={{ textAlign: 'center' }}>
-                  Engineering Undergraduate <br /> Faculty of Engineering <br/> University of Ruhuna
+                  Undergraduate <br /> Faculty of Engineering <br/> University of Ruhuna
                 </div>
               }
             />
