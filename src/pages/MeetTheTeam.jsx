@@ -87,8 +87,6 @@ import {
     return (
       <Layout>
         
-        
-
         <Box bg={useColorModeValue('gray.100', 'gray.700')}>
       <Container maxW={'7xl'} py={16} as={Stack} spacing={12}>
         <Stack spacing={0} align={'center'}>

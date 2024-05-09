@@ -63,8 +63,7 @@ import { useNavigate } from 'react-router-dom';
             <VStack spacing={2} alignItems="flex-start" color="gray.500">
               <ChakraLink onClick={() => handleNavigation('/login')}>Login</ChakraLink>
               <ChakraLink onClick={() => handleNavigation('/register')}>Register</ChakraLink>
-              <ChakraLink onClick={() => handleNavigation('/profile')}>Profile</ChakraLink>
-              <ChakraLink onClick={() => handleNavigation('/dashboard')}>Dashboard</ChakraLink>
+              
             </VStack>
           </VStack>
 
