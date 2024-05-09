@@ -16,9 +16,11 @@ import { Layout } from '../components/Layout'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 import { useNavigate } from 'react-router-dom';
-
+import ImagesGallery from '../components/Image-gallery/ImagesGallery';
 import heroImage from '../images/heroimage.jpg';
 import chatbotImage from '../images/chatbot.jpg';
+
+
 
 export default function Homepage() {
   const {currentUser}= useAuth()
@@ -27,6 +29,7 @@ export default function Homepage() {
   return (
     <Layout>
       
+      {/*Hero Section */}
       <Container maxW={'5xl'}>
       <Stack
         textAlign={'center'}
@@ -55,11 +58,11 @@ export default function Homepage() {
 
         
       </Stack>
-    </Container>
+      </Container>
 
 
-
-<Container maxW={'7xl'}>
+      {/*Hero Image */}
+      <Container maxW={'7xl'}>
   <Stack>
       <Flex
         flex={1}
@@ -88,9 +91,11 @@ export default function Homepage() {
           </Box>
         </Flex>
         </Stack>
-    </Container>
+      </Container>
 
-    <Container maxW={'7xl'}>
+
+      {/* Intro Section */ }
+      <Container maxW={'7xl'}>
       <Stack
         align={'center'}
         spacing={{ base: 8, md: 10 }}
@@ -100,7 +105,7 @@ export default function Homepage() {
           <Heading
             lineHeight={1.1}
             fontWeight={600}
-            fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}>
+            fontSize={{ base: '3xl', sm: '4xl', lg: '5xl' }}>
             <Text
               as={'span'}
               position={'relative'}
@@ -182,17 +187,51 @@ export default function Homepage() {
           </Box>
         </Flex>
       </Stack>
-    </Container>
+       
+      </Container>
 
 
+      {/* GALLERY */}
+       <Container maxW={'7xl'}>
+      <Stack
+        align={'center'}
+        spacing={{ base: 8, md: 10 }}
+        py={{ base: 20, md: 28 }}
+        direction={{ base: 'column', md: 'row' }}>
+        <Stack flex={1} spacing={{ base: 5, md: 10 }}>
+          <Heading
+            lineHeight={1.1}
+            fontWeight={600}
+            fontSize={{ base: '3xl', sm: '4xl', lg: '5xl' }}>
+            <Text
+              as={'span'}
+              position={'relative'}
+              _after={{
+                content: "''",
+                width: 'full',
+                height: '30%',
+                position: 'absolute',
+                bottom: 1,
+                left: 0,
+                bg: 'blue.400',
+                zIndex: -1,
+              }}>
+              Visit our Gallery
+            </Text>
+            <br />
+            
+          </Heading>
+        </Stack>
+      </Stack>
+      <ImagesGallery/>  
+       </Container>
 
-    
+
     </Layout>
   )
 }
 
-
-
+{/* STYLES*/}
 export const Blob = (props) => {
   return (
     <Icon
