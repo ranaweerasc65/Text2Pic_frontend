@@ -8,11 +8,10 @@ import {
   Stack,
   useToast,
 } from '@chakra-ui/react'
-import { ReactDOM } from 'react'
 import React, { useState } from 'react'
 import { Card } from '../components/Card'
 import { Layout } from '../components/Layout'
-import { useHistory, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { useAuth} from '../contexts/AuthContext'
 import { useNavigate } from 'react-router-dom'
 

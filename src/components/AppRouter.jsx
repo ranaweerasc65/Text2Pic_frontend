@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation, Outlet } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import ForgotPasswordPage from '../pages/ForgotPasswordPage';
 import Homepage from '../pages/Homepage';
 import Loginpage from '../pages/Loginpage';
@@ -8,7 +8,7 @@ import Profilepage from '../pages/Profilepage';
 import Dashboard from '../pages/Dashboard';
 import Registerpage from '../pages/Registerpage';
 import ResetPasswordPage from '../pages/ResetPasswordPage';
-import { useAuth } from '../contexts/AuthContext';
+
 import PrivateRoute from './PrivateRoute';
 import MeetTheTeamPage from '../pages/MeetTheTeam';
 import OurStoryPage from '../pages/OurStory';

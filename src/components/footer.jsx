@@ -7,9 +7,7 @@ import {
     Divider,
     Image,
     Text,
-    Button,
     IconButton,
-    LinkProps,
     Center
   } from '@chakra-ui/react';
   import { FaFacebook, FaWhatsapp } from 'react-icons/fa';

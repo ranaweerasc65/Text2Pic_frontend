@@ -6,10 +6,10 @@ import {
   Heading,
   HStack,
   Input,
-  Stack,
+  Stack,Flex,
   useToast,
 } from '@chakra-ui/react'
-import React, { useRef, useState,useEffect } from 'react'
+import React, {useState } from 'react'
 import { FcGoogle } from 'react-icons/fc'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { Card } from '../components/Card'
@@ -129,7 +129,9 @@ const mounted=useMounted()
             
             <Button
               type='submit'
-              colorScheme='pink'
+              colorScheme={'red'}
+              bg={'red.400'}
+              _hover={{ bg: 'red.500' }}
               size='lg'
               fontSize='md'
               isLoading={isSubmitting}
@@ -147,11 +149,13 @@ const mounted=useMounted()
           </Button>
         </HStack>
         <DividerWithText my={6}>OR</DividerWithText>
-
+        
+        <Flex justify="center" align="center">
         <Button
           variant='outline'
           //isFullWidth
-          colorScheme='red'
+          colorScheme={'blue'}
+              
           leftIcon={<FcGoogle />}
           onClick={() =>
             signInWithGoogle()
@@ -164,7 +168,7 @@ const mounted=useMounted()
           }
         >
           Sign in with Google
-        </Button>
+        </Button></Flex>
       </Card>
     </Layout>
   )

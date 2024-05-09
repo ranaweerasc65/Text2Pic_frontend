@@ -2,7 +2,6 @@ import {
   Box,
   HStack,
   IconButton,
-  Spacer,
   Image,
   useColorMode,
   useColorModeValue,

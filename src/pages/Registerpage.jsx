@@ -7,9 +7,9 @@ import {
   Heading,
   Input,
   Stack,
-  useToast,
+  useToast,Flex,
 } from '@chakra-ui/react'
-import React, { useEffect, useRef, useState } from 'react'
+import React, {useState } from 'react'
 import { FcGoogle } from 'react-icons/fc'
 import { useNavigate } from 'react-router-dom'
 import { Card } from '../components/Card'
@@ -94,7 +94,9 @@ export default function Registerpage() {
             </FormControl>
             <Button
               type='submit'
-              colorScheme='pink'
+              colorScheme={'red'}
+              bg={'red.400'}
+              _hover={{ bg: 'red.500' }}
               size='lg'
               fontSize='md'
               isLoading={isSubmitting}
@@ -109,9 +111,10 @@ export default function Registerpage() {
           </Button>
         </Center>
         <DividerWithText my={6}>OR</DividerWithText>
+        <Flex justify="center" align="center">
         <Button
           variant='outline'
-          colorScheme='red'
+          colorScheme='blue'
           leftIcon={<FcGoogle />}
           onClick={() =>
             signInWithGoogle()
@@ -120,7 +123,7 @@ export default function Registerpage() {
           }
         >
           Sign in with Google
-        </Button>
+        </Button></Flex>
       </Card>
     </Layout>
   )

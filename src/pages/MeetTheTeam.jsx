@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import {
   Box,
   Flex,
@@ -11,8 +10,10 @@ import {
   } from '@chakra-ui/react'
   import React from 'react'
   import { Layout } from '../components/Layout'
-  import { Link } from 'react-router-dom'
   import { useAuth } from '../contexts/AuthContext'
+  import pavith from '../images/Pavith.jpg'
+  import supun from '../images/Supun.jpg'
+  import sachini from '../images/Sachini.jpg'
   
   const Testimonial = ({ children }) => {
     return <Box>{children}</Box>;
@@ -107,9 +108,7 @@ import {
               </TestimonialText>
             </TestimonialContent>
             <TestimonialAvatar
-              src={
-                'https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80'
-              }
+              src={supun}
               name={'Supun Thilakshana'}
               title={
                 <div style={{ textAlign: 'center' }}>
@@ -129,9 +128,7 @@ import {
               </TestimonialText>
             </TestimonialContent>
             <TestimonialAvatar
-              src={
-                'https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80'
-              }
+              src={pavith}
               name={'Tharuka Pavith'}
               title={
                 <div style={{ textAlign: 'center' }}>
@@ -144,16 +141,14 @@ import {
            {/* Sachini */}
           <Testimonial>
             <TestimonialContent>
-              <TestimonialHeading>Frontend Engineer</TestimonialHeading>
+              <TestimonialHeading>Job</TestimonialHeading>
               <TestimonialText>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
                 neque sed imperdiet nibh lectus feugiat nunc sem.
               </TestimonialText>
             </TestimonialContent>
             <TestimonialAvatar
-              src={
-                'https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80'
-              }
+              src={sachini}
               name={'Sachini Ranaweera'}
               title={
                 <div style={{ textAlign: 'center' }}>

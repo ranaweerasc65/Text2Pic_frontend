@@ -1,11 +1,10 @@
 import {
-    Container,Circle,
+    Container,
     Heading,Stack,
-    Text,Flex,useColorModeValue,Box,Image,
+    Text,Flex,Box,Image,
   } from '@chakra-ui/react'
   import React from 'react'
   import { Layout } from '../components/Layout'
-  import { Link } from 'react-router-dom'
   import { useAuth } from '../contexts/AuthContext'
   import noveltyImage from '../images/novelty.jpg';
   import userImage from '../images/user.jpg';

@@ -1,12 +1,11 @@
 import { 
   Heading,
-  Text,IconProps,
+  Text,
   useColorModeValue,Circle,
-  Flex,Container,Stack,Button,Icon,IconButton,createIcon,Box,Image,
+  Flex,Container,Stack,Button,Icon,Box,Image,
 } from '@chakra-ui/react'
 import React from 'react'
 import { Layout } from '../components/Layout'
-import { Link } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 import { useNavigate } from 'react-router-dom';
 import ImagesGallery from '../components/Image-gallery/ImagesGallery';
