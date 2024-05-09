@@ -48,7 +48,7 @@ import { useNavigate } from 'react-router-dom';
               About
             </Text>
             <VStack spacing={2} alignItems="flex-start" color="gray.500">
-              <ChakraLink onClick={() => handleNavigation('/our-story')}>Our Story</ChakraLink>
+              <ChakraLink onClick={() => handleNavigation('/about-us')}>About Us</ChakraLink>
               <ChakraLink onClick={() => handleNavigation('/terms-and-conditions')}>Terms and Conditions</ChakraLink>
               <ChakraLink onClick={() => handleNavigation('/privacy-policy')}>Privacy Policy</ChakraLink>
               <ChakraLink onClick={() => handleNavigation('/meet-the-team')}>Meet the Team</ChakraLink>

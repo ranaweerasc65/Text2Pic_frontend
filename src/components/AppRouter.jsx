@@ -35,7 +35,7 @@ export default function AppRouter(props) {
 
 
           <Route path='/meet-the-team' element={<MeetTheTeamPage />} />
-          <Route path='/our-story' element={<OurStoryPage />} />
+          <Route path='/about-us' element={<OurStoryPage />} />
           <Route path='/privacy-policy' element={<PrivacyPolicyPage />} />
           <Route path='/terms-and-conditions' element={<TermsConditionPage />} />
 
