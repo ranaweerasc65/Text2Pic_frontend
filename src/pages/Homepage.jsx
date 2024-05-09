@@ -94,7 +94,7 @@ export default function Homepage() {
         py={{ base: 20, md: 28 }}
         direction={{ base: 'column', md: 'row' }}>
 
-<Flex
+       <Flex
           flexDirection={'column'}
           justifyContent={'space-around'}
           alignItems={'center'}
