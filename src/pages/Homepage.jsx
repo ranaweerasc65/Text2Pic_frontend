@@ -2,7 +2,7 @@ import {
   Heading,
   Text,
   useColorModeValue,Circle,
-  Flex,Container,Stack,Button,Icon,Box,Image,
+  Flex,Container,Stack,Button,Icon,Box,Image,HStack, Input,
 } from '@chakra-ui/react'
 import React from 'react'
 import { Layout } from '../components/Layout'
@@ -16,75 +16,145 @@ import boyImage from '../images/boy.jpeg';
 import leafImage from '../images/leaf.jpg';
 
 
+
+
 export default function Homepage() {
   const {currentUser}= useAuth()
   const navigate = useNavigate()
 
   return (
     <Layout>
-      
-      {/*Hero Section */}
-      <Container maxW={'5xl'}>
-      <Stack
-        textAlign={'center'}
-        align={'center'}
-        spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 28 }}>
 
-        <Heading
-          fontWeight={600}
-          fontSize={{ base: '3xl', sm: '4xl', md: '6xl' }}
-          lineHeight={'80%'}>
-          Free Online{' '}
-        <Text as={'span'} color={'red.500'} >
+
+<Container maxW={'7xl'} py={{ base: 24, md: 32 }} position="relative">
+  <Stack align={'center'} spacing={{ base: 10, md: 20 }} direction={{ base: 'column', md: 'row' }}>
+    {/* Text Section */}
+    <Stack flex={1} spacing={{ base: 5, md: 10 }}>
+      <Heading
+        lineHeight={1.1}
+        fontWeight={700}
+        fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}
+        textAlign={{ base: 'center', md: 'left' }}
+      >
+        Free Online{' '}
+        <Text as={'span'} color={'red.400'}>
           AI Image Generator
         </Text>
-        <Box>
-        <Text as={'span'} color={'blue.400'} display="block" fontSize="lg"fontWeight="bold">
-        Welcome to Text2Pic, where imagination meets Education! 
-        </Text>
-        </Box>
-        </Heading>
-
-        <Text color={'gray.500'} maxW={'3xl'}fontSize="lg">
-        Watch words come to life in vibrant illustrations, making English learning a delightful adventure!
-        </Text>
-
-        
+      </Heading>
+      <Text
+        color={'gray.600'}
+        fontSize={{ base: 'lg', md: 'xl' }}
+        textAlign={{ base: 'center', md: 'left' }}
+      >
+        Welcome to Text2Pic, where imagination meets Education! Watch words
+        come to life in vibrant illustrations, making English learning a
+        delightful adventure!
+      </Text>
+      <Stack
+        direction={{ base: 'column', sm: 'row' }}
+        spacing={{ base: 4, sm: 6 }}
+        justify={{ base: 'center', md: 'flex-start' }}
+      >
+        <Button
+          rounded={'full'}
+          size={'lg'}
+          fontWeight={'normal'}
+          px={6}
+          colorScheme={'red'}
+          bg={'red.400'}
+          _hover={{ bg: 'red.500' }}
+          onClick={() => navigate('/login')}
+        >
+          Get Started
+        </Button>
       </Stack>
-      </Container>
-
-      {/*Hero Image */}
-      <Container maxW={'7xl'}>
-  <Stack>
-      <Flex
-        flex={1}
-        justify={'center'}
-        align={'center'}
-        position={'relative'}
-        w={'full'}>
-         
+    </Stack>
+    {/* Image Section */}
+    <Flex flex={1} justify={'center'} align={'center'} position="relative">
       <Box
         position={'relative'}
-        height={'400px'}
+        height={{ base: '300px', md: '400px' }}
         rounded={'2xl'}
         boxShadow={'2xl'}
-        width={'600px'}
-        overflow={'hidden'}>
+        width={'full'}
+        overflow={'hidden'}
+      >
+        <Image
+          alt={'Hero Image'}
+          fit={'cover'}
+          align={'center'}
+          w={'100%'}
+          h={'100%'}
+          src={heroImage}
+        />
+        {/* Larger Transparent Circles with Border */}
+        <Box
+          position="absolute"
+          top="-20%"
+          left="-20%"
+          w="500px"
+          h="500px"
+          border="2px solid rgba(255, 99, 71, 0.5)"
+          borderRadius="50%"
+        ></Box>
+        <Box
+          position="absolute"
+          top="50%"
+          left="50%"
+          transform="translate(-50%, -50%)"
+          w="600px"
+          h="600px"
+          border="2px solid rgba(30, 144, 255, 0.5)"
+          borderRadius="50%"
+        ></Box>
+      </Box>
+      {/* Decorative Elements */}
+      <Box
+        position="absolute"
+        top="-10%"
+        right="-10%"
+        w="150px"
+        h="150px"
+        bg="rgba(255, 99, 71, 0.3)"
+        borderRadius="50%"
+        filter="blur(30px)"
+      ></Box>
+      <Box
+        position="absolute"
+        bottom="-10%"
+        left="-10%"
+        w="200px"
+        h="200px"
+        bg="rgba(30, 144, 255, 0.3)"
+        borderRadius="50%"
+        filter="blur(40px)"
+      ></Box>
+      <Box
+        position="absolute"
+        top="20%"
+        left="50%"
+        transform="translate(-50%, -50%)"
+        w="100px"
+        h="100px"
+        bg="rgba(34, 139, 34, 0.3)"
+        borderRadius="50%"
+        filter="blur(20px)"
+      ></Box>
+    </Flex>
+  </Stack>
+  {/* Circle Patterns */}
+  <Box position="absolute" top="10%" left="10%" w="10px" h="10px" bg="red.400" borderRadius="50%" />
+  <Box position="absolute" top="20%" left="20%" w="15px" h="15px" bg="blue.400" borderRadius="50%" />
+  <Box position="absolute" top="30%" left="15%" w="8px" h="8px" bg="green.400" borderRadius="50%" />
+  <Box position="absolute" top="40%" left="25%" w="12px" h="12px" bg="purple.400" borderRadius="50%" />
+  <Box position="absolute" top="50%" left="30%" w="20px" h="20px" bg="orange.400" borderRadius="50%" />
+  <Box position="absolute" top="60%" left="35%" w="7px" h="7px" bg="pink.400" borderRadius="50%" />
+  
+</Container>
 
-            <Image
-              alt={'Hero Image'}
-              fit={'cover'}
-              align={'center'}
-              w={'100%'}
-              h={'100%'}
-              src={heroImage}
-            />
-            <Image/>
-          </Box>
-        </Flex>
-        </Stack>
-      </Container>
+
+
+
 
       {/*Introducing text2pic */}
       <Container maxW={'7xl'}>

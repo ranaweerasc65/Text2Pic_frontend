@@ -101,7 +101,7 @@ import {
             {/* Supun */}
           <Testimonial>
             <TestimonialContent>
-              <TestimonialHeading>Job</TestimonialHeading>
+              
               <TestimonialText>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
                 neque sed imperdiet nibh lectus feugiat nunc sem.
@@ -121,7 +121,7 @@ import {
            {/* Pavith */}
           <Testimonial>
             <TestimonialContent>
-              <TestimonialHeading>Job</TestimonialHeading>
+              
               <TestimonialText>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
                 neque sed imperdiet nibh lectus feugiat nunc sem.
@@ -141,7 +141,7 @@ import {
            {/* Sachini */}
           <Testimonial>
             <TestimonialContent>
-              <TestimonialHeading>Job</TestimonialHeading>
+              
               <TestimonialText>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
                 neque sed imperdiet nibh lectus feugiat nunc sem.
@@ -167,3 +167,5 @@ import {
     )
   }
   
+
+  {/*<TestimonialHeading>Job</TestimonialHeading> */}

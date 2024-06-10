@@ -67,7 +67,8 @@ export default function ForgotPasswordPage() {
             </FormControl>
             <Button 
             type='submit' 
-            colorScheme='primary' 
+            bg={'red.400'}
+              _hover={{ bg: 'red.500' }}
             size='lg' 
             fontSize='md'
             isLoading={isSubmitting}

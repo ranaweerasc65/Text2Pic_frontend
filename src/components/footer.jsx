@@ -28,7 +28,7 @@ import { useNavigate } from 'react-router-dom';
 
 
     return (
-      <Box p={{ base: 5, md: 8 }} maxW="container.lg" marginInline="auto"> 
+      <Box p={{ base: 5, md: 8 }} maxW="container.lg" marginInline="auto" > 
         <Stack
           spacing={{ base: 8, md: 0 }}
           justifyContent="space-between"
