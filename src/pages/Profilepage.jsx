@@ -1,6 +1,5 @@
 import {
   Button,
-  Flex,
   FormControl,
   FormLabel,
   Input,
@@ -11,8 +10,6 @@ import {
   IconButton,
   Card,
   Center,
-  chakra,
-  Container,
   Heading,
 } from '@chakra-ui/react';
 import { SmallCloseIcon } from '@chakra-ui/icons';

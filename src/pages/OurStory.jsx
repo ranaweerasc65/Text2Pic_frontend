@@ -5,13 +5,12 @@ import {
   } from '@chakra-ui/react'
   import React from 'react'
   import { Layout } from '../components/Layout'
-  import { useAuth } from '../contexts/AuthContext'
   import noveltyImage from '../images/novelty.jpg';
   import userImage from '../images/user.jpg';
   import newImage from '../images/new.jpg';
 
   export default function OurStoryPage() {
-    const {currentUser}= useAuth()
+
     return (
       <Layout>
         <Container maxW={'7xl'}>

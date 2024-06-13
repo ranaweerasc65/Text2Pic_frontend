@@ -10,7 +10,7 @@ import {
   } from '@chakra-ui/react'
   import React from 'react'
   import { Layout } from '../components/Layout'
-  import { useAuth } from '../contexts/AuthContext'
+  
   import pavith from '../images/Pavith.jpg'
   import supun from '../images/Supun.jpg'
   import sachini from '../images/Sachini.jpg'
@@ -49,13 +49,7 @@ import {
     );
   };
   
-  const TestimonialHeading = ({ children }) => {
-    return (
-      <Heading as={'h3'} fontSize={'xl'}>
-        {children}
-      </Heading>
-    );
-  };
+  
   
   const TestimonialText = ({ children }) => {
     return (
@@ -84,7 +78,7 @@ import {
   
 
   export default function MeetTheTeamPage() {
-    const {currentUser}= useAuth()
+    
     return (
       <Layout>
         

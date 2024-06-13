@@ -6,10 +6,10 @@ import {
   } from '@chakra-ui/react'
   import React from 'react'
   import { Layout } from '../components/Layout'
-  import { useAuth } from '../contexts/AuthContext'
+
   
   export default function PrivacyPolicyPage() {
-    const {currentUser}= useAuth()
+    
     return (
     <Layout>
         <Container maxW={'7xl'}>
@@ -20,7 +20,7 @@ import {
               fontWeight={600}
               fontSize={{ base: '3xl', sm: '4xl', lg: '5xl' }}>
               <Text as={'span'} color={'red.400'}>
-                Terms and Conditions
+                Privacy Policy
               </Text>  
             </Heading>           
           </Stack>
